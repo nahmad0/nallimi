@@ -1,0 +1,570 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+
+}
+body { /* we hdd some style for the body*/
+    background-color: #080808; /*change the backgroung to black */
+    color: #fff; /* the text will be white*/
+
+
+}
+
+
+ #header {
+    
+    width: 100%;
+    height: 100vh;
+    background-image: url(img/Adobe\ Express\ -\ file.png);    /* we add a image here.*/
+    background-position: center right;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+ }
+ /* }
+ .logo {
+    width: 140px;
+    
+ }
+ .container {
+    padding: 10px 10%;
+ } */
+ .logo-container {
+    position: relative;
+    display: inline-block;
+}
+
+.logo {
+    width: 200px; /* Adjust as needed */
+    
+
+}
+
+.fire-overlay {
+    position: absolute;
+    top: 0;
+    left: -15px;
+    width: 200px;
+    pointer-events: none;
+    mix-blend-mode:   hard-light; /* Makes fire blend nicely */
+
+}
+
+html {
+  scroll-behavior:smooth;
+}
+
+ nav{
+    display: flex;
+    align-items: center;
+    justify-content: stretch;
+    flex-wrap: wrap;
+ }
+
+ nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 5px 30px;
+ }
+ nav ul li a {
+     position: relative;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    display: inline-block;
+    padding: 5px 10px;
+
+ }
+
+ nav ul li a::after{
+    content: '';
+    width: 0%;
+    height: 3px;
+    background: red;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.75s;
+    
+ }
+ nav ul li a:hover::after{
+    width: 100%;
+
+ }
+    .header_text {
+        margin-top: 10px;
+        font-size: 30px;
+       
+
+    }
+    .header_text h1{
+        font-size: 60px;
+        margin-top: 20%;
+ 
+    }
+    .header_text h1 span {
+       color: red;
+    }
+
+    /* ------------About ME ---------------*/
+    #about{
+        padding: 100px 0;
+        color: #ababab;
+    }
+    .row {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .about-col-1 {
+        flex-basis: 35%;
+
+
+    }
+    .about-col-1 img{
+        width: 100%;
+        border-radius: 15%;
+    }
+    .about-col-2{
+        flex-basis: 60%;
+    
+    }
+    .sub-title {
+        font-size: 60px;
+        font-weight: 600;
+        color: white;
+    }
+
+    .tab-titles{
+        display: flex;
+        margin: 20px 0 40px;
+
+    }
+    .tab-links {
+        margin-right: 50px;
+        font-size: 18px;
+        font-weight: 500;
+        cursor: pointer;
+        position: relative;
+    }
+
+    .tab-links::after{
+        content: '';
+
+        width: 0;
+        height: 3px;
+        background: #ff004f ;
+        position: absolute;
+        left: 0;
+        bottom: -6px;
+        transition: 0.75s;
+    }
+    .tab-links.active-link::after{
+    width: 50%;
+    }
+    .tab-contents ul li {
+        list-style: none;
+        margin: 10px;
+
+    }
+    .tab-contents ul li span {
+        color: #b54769;
+        font-size: 16px;
+    }
+    .tab-contents{
+        display: none;
+    }
+    .tab-contents.active-tab {
+        display: block;
+    }
+
+
+
+    /* Services */
+     #serverices {
+        padding: 30px 0;
+        margin: 400px 50px;
+     }
+
+    .services-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+        grid-gap: 50px;
+        margin-top: 100px;
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+    .services-list div {
+      background-color: #262626;
+      padding: 40px;
+      width: 500px;
+      height: 400px;
+      font-size: 300;
+      border-right: 10px;
+      transition: 0.5s;
+    }
+    .services-list div:hover {
+      background-color: red;
+      transform: translateY(-10px);
+
+    }
+
+
+/*  HEre the cards is part of animation I took fro*/
+.container1 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .container1 .glass {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    background: linear-gradient(#fff2, transparent);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 25px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    border-radius: 10px;
+    margin: 0 -45px;
+    backdrop-filter: blur(10px);
+    transform: rotate(calc(var(--r) * 1deg));
+  }
+  
+  .container1 .glass:hover {
+    transform: rotate(0deg);
+    margin: 0 10px;
+    background: red; /* Change background to red */
+    border: 1px solid rgba(255, 0, 0, 0.5); /* Slight red border */
+}
+  
+  .container1 .glass::before {
+    content: attr(data-text);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+  }
+  .container1 .glass svg {
+    font-size: 2.5em;
+    fill: #fff;
+  }
+
+
+  /* Learn more button taken from univser.io */
+  button {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  font-family: inherit;
+  font-size: 15px;
+}
+
+button.learn-more {
+  font-weight: 600;
+  color: #e88d14;
+  text-transform: uppercase;
+  padding: 1.25em 2em;
+  background: #ad1b02;
+  border: 2px solid #f3be26;
+  border-radius: 0.75em;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transition: background 150ms cubic-bezier(0, 0, 0.58, 1),
+    -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1),
+    background 150ms cubic-bezier(0, 0, 0.58, 1),
+    -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+
+button.learn-more::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #f3be26;
+  border-radius: inherit;
+  -webkit-box-shadow: 0 0 0 2px #b18597, 0 0.625em 0 0 #ffe3e2;
+  box-shadow: 0 0 0 2px #b18597, 0 0.625em 0 0 #ffe3e2;
+  -webkit-transform: translate3d(0, 0.75em, -1em);
+  transform: translate3d(0, 0.75em, -1em);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1),
+    box-shadow 150ms cubic-bezier(0, 0, 0.58, 1),
+    -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1),
+    -webkit-box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+
+button.learn-more:hover {
+  background: #ffe9e9;
+  -webkit-transform: translate(0, 0.25em);
+  transform: translate(0, 0.25em);
+}
+
+button.learn-more:hover::before {
+  -webkit-box-shadow: 0 0 0 2px #b18597, 0 0.5em 0 0 #ffe3e2;
+  box-shadow: 0 0 0 2px #b18597, 0 0.5em 0 0 #ffe3e2;
+  -webkit-transform: translate3d(0, 0.5em, -1em);
+  transform: translate3d(0, 0.5em, -1em);
+}
+
+button.learn-more:active {
+  background: #ffe9e9;
+  -webkit-transform: translate(0em, 0.75em);
+  transform: translate(0em, 0.75em);
+}
+
+button.learn-more:active::before {
+  -webkit-box-shadow: 0 0 0 2px #b18597, 0 0 #ffe3e2;
+  box-shadow: 0 0 0 2px #b18597, 0 0 #ffe3e2;
+  -webkit-transform: translate3d(0, 0, -1em);
+  transform: translate3d(0, 0, -1em);
+}
+
+/*-------------Contact me Page -----------------*/
+legend {
+  display: block;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: black;
+}
+
+
+
+
+
+.full_widthtable {
+  width: 100%;
+}
+
+.full_widthtable td {
+  padding: 10px;
+  border: none;
+}
+
+#majors {
+  width: 200px;
+  height: 30px;
+}
+
+#areaText {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.inputbox {
+  width: 300px;
+  height: 30px;
+}
+
+.submitButton {
+  font-size: 30px;
+  color: black;
+  width: 400px;
+  height: 50px;
+  background-color: rgb(186, 186, 186);
+}
+
+.submitButton:hover {
+  background-color: blue;
+}
+
+.dropdown {
+  width: 300px;
+  font-size: 16px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.dropdown option {
+  font-size: 16px;}
+  /* Option font size (optional)*/
+
+/* About Me Page Specific Styles */
+.Mystyleforcard {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 0px;
+}
+
+/* Projects Page Specific Styles */
+.Mystyleforcards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 100px;
+    margin-left: 50px;
+}
+
+/* Card Styles (Used in both About Me and Projects pages) */
+.card {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    perspective: 1000px;
+    box-shadow: 0 0 0 5px #ffffff80;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+}
+
+.card svg {
+    width: 48px;
+    fill: #333;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card:hover svg {
+    scale: 0;
+}
+
+/* Card Image Styles */
+.card {
+    position: relative;
+    width: 400px;
+    height: 500px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Card Content Styles */
+.card__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: rgba(154, 55, 55, 0.8);
+    transform: rotateX(-90deg);
+    transform-origin: bottom;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card:hover .card__content {
+    transform: rotateX(0deg);
+}
+
+.card__title {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+    font-weight: 700;
+}
+
+.card__description {
+    margin: 10px 0 0;
+    font-size: 14px;
+    color: #777;
+    line-height: 1.4;
+}
+
+.card__description a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.card__description a:hover {
+    text-decoration: underline;
+}
+
+/* Animation Logo CSS */
+.svg-frame {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    transform-style: preserve-3d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.svg-frame svg {
+    position: absolute;
+    transition: .5s;
+    z-index: calc(1 - (0.2 * var(--j)));
+    transform-origin: center;
+    width: 344px;
+    height: 344px;
+    fill: none;
+}
+
+.svg-frame:hover svg {
+    transform: rotate(-80deg) skew(30deg) translateX(calc(45px * var(--i))) translateY(calc(-35px * var(--i)));
+}
+
+.svg-frame svg #center {
+    transition: .5s;
+    transform-origin: center;
+}
+
+.svg-frame:hover svg #center {
+    transform: rotate(-30deg) translateX(45px) translateY(-3px);
+}
+
+#out2 {
+    animation: rotate16 7s ease-in-out infinite alternate;
+    transform-origin: center;
+}
+
+#out3 {
+    animation: rotate16 3s ease-in-out infinite alternate;
+    transform-origin: center;
+    stroke: #ff0;
+}
+
+#inner3,
+#inner1 {
+    animation: rotate16 4s ease-in-out infinite alternate;
+    transform-origin: center;
+}
+
+#center1 {
+    fill: #ff0;
+    animation: rotate16 2s ease-in-out infinite alternate;
+    transform-origin: center;
+}
+
+@keyframes rotate16 {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+  

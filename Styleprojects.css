@@ -1,0 +1,382 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+
+}
+body { /* we hdd some style for the body*/
+    background-color: #080808; /*change the backgroung to black */
+    color: #fff; /* the text will be white*/
+
+
+}
+
+
+ #header {
+    
+    width: 100%;
+    height: 100vh;
+    
+    background-position: center right;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+ }
+
+.header_text {
+    margin-top: 10px;
+    font-size: 30px;
+   
+
+}
+.header_text h1{
+    font-size: 60px;
+    margin-top: 20%;
+
+}
+.header_text h1 span {
+   color: red;
+}
+
+ /* }
+ .logo {
+    width: 140px;
+    
+ }*/
+ .logo-container {
+    position: relative;
+    display: inline-block;
+}
+
+.logo {
+    width: 200px; /* here Adjust as needed */
+    
+
+}
+
+.fire-overlay {
+    position: absolute;
+    top: 0;
+    left: -15px;
+    width: 200px;
+    pointer-events: none;
+    mix-blend-mode:   hard-light; /* Makes fire blend nicely */
+
+}
+
+html {
+  scroll-behavior:smooth;
+}
+
+ nav{
+    display: flex;
+    align-items: center;
+    justify-content: stretch;
+    flex-wrap: wrap;
+ }
+
+ nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 5px 30px;
+ }
+ nav ul li a {
+     position: relative;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    display: inline-block;
+    padding: 5px 10px;
+
+ }
+
+ nav ul li a::after{
+    content: '';
+    width: 0%;
+    height: 3px;
+    background: red;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.75s;
+    
+ }
+ nav ul li a:hover::after{
+    width: 100%;
+
+ }
+
+
+ .Mystyleforcard {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 100px;
+    margin-left: 50px;
+ }
+ 
+
+
+    /* cards scc */
+    
+.card {
+    position: relative;
+    width: 300px; /* Adjust width as needed */
+    height: 200px; /* Adjust height as needed */
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Ensures nothing spills out */
+    perspective: 1000px;
+    box-shadow: 0 0 0 5px #ffffff80;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+ }
+ 
+ .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+ }
+ 
+ .card svg {
+    width: 48px;
+    fill: #333;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+ }
+ 
+ .card:hover svg {
+    scale: 0;
+ }
+ 
+ /* --- FIX IMAGE ZOOM ISSUE --- */
+ .card {
+    position: relative;  /* Ensure positioning context for absolute content */
+    width: 400px; /* Example width for the card */
+    height: 500px; /* Example height for the card */
+    overflow: hidden;  /* Ensures content doesn't overflow */
+    border-radius: 10px; /* Optional, if you want rounded corners */
+ }
+ 
+ .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image covers the div without stretching */
+    display: block; /* Fixes any spacing issues below the image */
+ }
+ 
+ /* --- CARD CONTENT --- */
+ .card__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: rgba(154, 55, 55, 0.8); /* Semi-transparent background */
+    transform: rotateX(-90deg); 
+    transform-origin: bottom;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+ }
+ 
+ .card:hover .card__content {
+    transform: rotateX(0deg);
+ }
+ 
+ .card__title {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+    font-weight: 700;
+ }
+ 
+ .card__description {
+    margin: 10px 0 0;
+    font-size: 14px;
+    color: #777;
+    line-height: 1.4;
+ }
+ 
+ .card__description a {
+    color: #007bff;  /* Link color */
+    text-decoration: none;
+ }
+ 
+ .card__description a:hover {
+    text-decoration: underline;
+ }
+ 
+/* The animation logo css */
+.svg-frame {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    transform-style: preserve-3d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .svg-frame svg {
+    position: absolute;
+    transition: .5s;
+    z-index: calc(1 - (0.2 * var(--j)));
+    transform-origin: center;
+    width: 344px;
+    height: 344px;
+    fill: none;
+  }
+  
+  .svg-frame:hover svg {
+    transform: rotate(-80deg) skew(30deg) translateX(calc(45px * var(--i))) translateY(calc(-35px * var(--i)));
+  }
+  
+  .svg-frame svg #center {
+    transition: .5s;
+    transform-origin: center;
+  }
+  
+  .svg-frame:hover svg #center {
+    transform: rotate(-30deg) translateX(45px) translateY(-3px);
+  }
+  
+  #out2 {
+    animation: rotate16 7s ease-in-out infinite alternate;
+    transform-origin: center;
+  }
+  
+  #out3 {
+    animation: rotate16 3s ease-in-out infinite alternate;
+    transform-origin: center;
+    stroke: #ff0;
+  }
+  
+  #inner3,
+  #inner1 {
+    animation: rotate16 4s ease-in-out infinite alternate;
+    transform-origin: center;
+  }
+  
+  #center1 {
+    fill: #ff0;
+    animation: rotate16 2s ease-in-out infinite alternate;
+    transform-origin: center;
+  }
+  
+  @keyframes rotate16 {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+    
+ 
+ .article-wrapper {
+    width: 250px;
+    -webkit-transition: 0.15s all ease-in-out;
+    transition: 0.15s all ease-in-out;
+    border-radius: 10px;
+    padding: 5px;
+    border: 4px solid transparent;
+    cursor: pointer;
+    background-color: white;
+  }
+  
+  .article-wrapper:hover {
+    -webkit-box-shadow: 10px 10px 0 #4e84ff, 20px 20px 0 #4444bd;
+    box-shadow: 10px 10px 0 #4e84ff, 20px 20px 0 #4444bd;
+    border-color: #0578c5;
+    -webkit-transform: translate(-20px, -20px);
+    -ms-transform: translate(-20px, -20px);
+    transform: translate(-20px, -20px);
+  }
+  
+  .article-wrapper:active {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  
+  .types {
+    gap: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    place-content: flex-start;
+  }
+  
+  .rounded-lg {
+   /* class tailwind */
+    border-radius: 10px;
+  }
+  
+  .article-wrapper:hover .project-hover {
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    background-color: #a6c2f0;
+  }
+  
+  .project-info {
+    padding-top: 20px;
+    padding: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .project-title {
+    font-size: 2em;
+    margin: 0;
+    font-weight: 600;
+   /* depend de la font */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: black;
+  }
+  
+  .flex-pr {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  
+  .project-type {
+    background: #b2b2fd;
+    color: #1a41cd;
+    font-weight: bold;
+    padding: 0.3em 0.7em;
+    border-radius: 15px;
+    font-size: 12px;
+    letter-spacing: -0.6px
+  }
+  
+  .project-hover {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    padding: 9px;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  
+  .container-project {
+    width: 100%;
+    height: 170px;
+    background: gray;
+  }
+  
