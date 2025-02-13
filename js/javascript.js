@@ -27,3 +27,17 @@ function showMessage(event) {
     
     return false;
 }
+
+function compareEmails() {
+    console.log('Function triggered') // for debugging.
+    var email = document.forms[0].Email.value;
+    var confirmEmail = document.forms[0].ConfirmEmail.value;
+
+    if (email !== confirmEmail) {
+        alert("The email addresses do not match.");
+        return false; // Prevent form submission
+    } else {
+        alert("Thank you! We recieved your information");
+        return true;
+    }
+}
